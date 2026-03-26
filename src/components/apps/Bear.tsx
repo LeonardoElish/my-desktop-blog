@@ -211,18 +211,18 @@ const Bear = () => {
   };
 
   return (
-    <div className="bear font-avenir flex h-full">
-      <div className="w-44 overflow-auto bg-gray-700">
+    <div className="bear font-avenir flex h-full overflow-x-auto">
+      <div className="w-44 shrink-0 overflow-auto bg-gray-700">
         <Sidebar cur={state.curSidebar} setMidBar={setMidBar} />
       </div>
-      <div className="w-60 overflow-auto" bg="gray-50 dark:gray-800" border="r c-300">
+      <div className="w-60 shrink-0 overflow-auto" bg="gray-50 dark:gray-800" border="r c-300">
         <Middlebar
           items={state.midbarList}
           cur={state.curMidbar}
           setContent={setContent}
         />
       </div>
-      <div className="flex-1 overflow-auto" bg="gray-50 dark:gray-800">
+      <div className="flex-1 min-w-[300px] shrink-0 overflow-auto bg-gray-50 dark:bg-gray-800 relative">
         <Content contentID={state.contentID} contentURL={state.contentURL} />
       </div>
     </div>
