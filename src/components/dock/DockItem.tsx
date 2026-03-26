@@ -106,6 +106,8 @@ export default function DockItem({
       >
         {title}
       </p>
+
+      {/* 这里的逻辑需要统一：无论有没有 link，style 都要给保底宽度 */}
       {link ? (
         <a href={link} target="_blank" rel="noreferrer">
           <motion.img
@@ -114,7 +116,12 @@ export default function DockItem({
             alt={title}
             title={title}
             draggable={false}
-            style={winWidth < 640 ? {} : { width, willChange: "width" }}
+            style={
+              winWidth < 640
+                ? { width: `${dockSize / 16}rem` }
+                : { width, willChange: "width" }
+            }
+            className="object-contain"
           />
         </a>
       ) : (
@@ -124,9 +131,17 @@ export default function DockItem({
           alt={title}
           title={title}
           draggable={false}
-          style={winWidth < 640 ? {} : { width, willChange: "width" }}
+          style={
+            winWidth < 640
+              ? { width: `${dockSize / 16}rem` }
+              : { width, willChange: "width" }
+          }
+          className="object-contain"
         />
       )}
+
+      {/* 💡 这个 div 是底部的“已打开”指示点，不应该给它 width 样式，
+          否则它会变成一个巨大的色块挤占空间 */}
       <div
         className={`size-1 mx-auto rounded-full bg-c-800 ${isOpen ? "" : "invisible"}`}
       />

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { init } from '@waline/client';
-import '@waline/client/style'; // 引入基础样式
+import React, { useEffect, useRef } from "react";
+import { init } from "@waline/client";
+import "@waline/client/style"; // 引入基础样式
 
 export default function Messages() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -9,12 +9,12 @@ export default function Messages() {
     if (containerRef.current) {
       const waline = init({
         el: containerRef.current,
-        serverURL: 'https://walinehello.vercel.app/', // 替换成你第一步得到的URL
-        dark: 'html.dark', // 自动跟随你 html 标签上的 dark 类名切换主题
+        serverURL: "https://api.sakiko.wiki/", // 替换成你第一步得到的URL
+        dark: "html.dark", // 自动跟随你 html 标签上的 dark 类名切换主题
         emoji: [
-          '//unpkg.com/@waline/emojis@1.1.0/weibo',
-          '//unpkg.com/@waline/emojis@1.1.0/bilibili',
-        ],
+          "//unpkg.com/@waline/emojis@1.1.0/weibo",
+          "//unpkg.com/@waline/emojis@1.1.0/bilibili"
+        ]
       });
 
       return () => waline?.destroy();
@@ -35,7 +35,7 @@ export default function Messages() {
             <h1 className="text-3xl font-bold text-c-800">留下你的足迹 </h1>
             <p className="mt-2 text-c-500">欢迎交换友链或提出建议</p>
           </header>
-          
+
           {/* Waline 挂载点 */}
           <div ref={containerRef} />
         </div>
