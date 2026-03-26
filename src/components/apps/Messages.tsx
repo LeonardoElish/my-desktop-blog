@@ -33,7 +33,7 @@ export default function Messages() {
         <div className="max-w-2xl mx-auto">
           <header className="mb-8">
             <h1 className="text-3xl font-bold text-c-800">留下你的足迹 </h1>
-            <p className="mt-2 text-c-500">欢迎交换友链或提出建议。</p>
+            <p className="mt-2 text-c-500">欢迎交换友链或提出建议</p>
           </header>
           
           {/* Waline 挂载点 */}
