@@ -1,5 +1,6 @@
 import { appBarHeight } from "~/utils";
 import type { AppsData } from "~/types";
+import Messages from "~/components/apps/Messages";
 
 const apps: AppsData[] = [
   {
@@ -14,7 +15,7 @@ const apps: AppsData[] = [
     desktop: true,
     width: 860,
     height: 500,
-    show: true,
+    show: false,
     y: -40,
     img: "img/icons/bear.png",
     content: <Bear />
@@ -78,6 +79,16 @@ const apps: AppsData[] = [
     desktop: false,
     img: "img/icons/github.png",
     link: "https://github.com/LeonardoElish"
+  },
+  {
+  id: "messages",
+  title: "Messages",
+  desktop: true,
+  show: false,
+  width: 700,
+  height: 600,
+  img: "img/icons/messages.png", 
+  content: <Messages />
   }
 ];
 

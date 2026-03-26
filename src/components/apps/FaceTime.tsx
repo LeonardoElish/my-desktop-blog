@@ -31,11 +31,11 @@ const SidebarItem = ({ date, active }: SidebarItemProps) => {
       onMouseLeave={() => setHover(false)}
     >
       <div className="size-11 rounded-full bg-zinc-600 flex-center">
-        <span className="i-ph:link-bold" text="2xl white/80" />
+        <span className="i-ph:link-bold text-2xl text-white/80" />
       </div>
 
-      <div text="left">
-        <div className="font-medium leading-4" text="white sm">
+      <div className="text-left">
+        <div className="font-medium leading-4 text-white text-sm">
           FaceTime Link
         </div>
         <div className="hstack space-x-1 text-white/60">
@@ -45,8 +45,7 @@ const SidebarItem = ({ date, active }: SidebarItemProps) => {
       </div>
 
       <span
-        className="i-maki:cross absolute right-2.5 duration-150"
-        text={`lg white/60 hover:white ${!hover && "transparent"}`}
+        className={`i-maki:cross absolute right-2.5 duration-150 text-lg text-white/60 hover:text-white ${!hover && "transparent"}`}
         onClick={(e) => {
           e.stopPropagation();
           deleteImage(date);
@@ -87,7 +86,7 @@ const Sidebar = ({ state, onTake, onSave, onSelect }: SidebarProps) => {
         </button>
       </div>
 
-      <div className="text-xs flex-1 overflow-y-scroll" p="t-5 b-2.5 x-2.5">
+      <div className="text-xs flex-1 overflow-y-scroll pt-5 pb-2.5 px-2.5">
         <div className="px-2.5 text-white/60 mb-2">Recent</div>
         {Object.keys(images)
           .reverse()

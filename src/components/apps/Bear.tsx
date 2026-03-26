@@ -95,11 +95,11 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
             <div className="-mt-1 w-10 vstack text-c-500">
               <span className={item.icon} />
             </div>
-            <span className="relative flex-1 font-bold" text="gray-900 dark:gray-100">
+            <span className="relative flex-1 font-bold text-gray-900 dark:text-gray-100">
               {item.title}
               {item.link && (
                 <a
-                  pos="absolute top-1 right-4"
+                  className="absolute top-1 right-4"
                   href={item.link}
                   target="_blank"
                   rel="noreferrer"
@@ -109,7 +109,7 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
               )}
             </span>
           </div>
-          <div className="flex-1 ml-10" p="b-2 r-1" text="sm c-500" border="b c-300">
+          <div className="flex-1 ml-10 pb-2 pr-1 text-sm text-c-500 border-b border-c-300">
             {item.excerpt}
           </div>
         </li>
@@ -215,7 +215,7 @@ const Bear = () => {
       <div className="w-44 shrink-0 overflow-auto bg-gray-700">
         <Sidebar cur={state.curSidebar} setMidBar={setMidBar} />
       </div>
-      <div className="w-60 shrink-0 overflow-auto" bg="gray-50 dark:gray-800" border="r c-300">
+      <div className="w-60 shrink-0 overflow-auto bg-gray-50 dark:gray-800 border-r border-c-300">
         <Middlebar
           items={state.midbarList}
           cur={state.curMidbar}
